@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DogsAPP">
         <activity
-            android:name=".presentation.views.home.HomeActivity"
+            android:name=".presentation.views.home.DetailsActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/Theme.DogsAPP.NoActionBar"></activity>
         <activity
