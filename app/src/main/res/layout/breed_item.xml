@@ -16,7 +16,7 @@
         android:background="?android:selectableItemBackground">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textViewName"
             style="@style/breed_title"
             android:text="Name"
             android:layout_width="match_parent"

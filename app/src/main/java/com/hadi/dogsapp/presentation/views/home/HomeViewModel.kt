@@ -1,7 +1,6 @@
 package com.hadi.dogsapp.presentation.views.home
 
-import BaseSchedulerProvider
-import BaseViewModel
+
 import android.os.AsyncTask.execute
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
@@ -12,6 +11,8 @@ import com.hadi.dogsapp.domain.usecases.GetAllBreedsUseCase
 import com.hadi.dogsapp.presentation.mapper.DogBreedDataMapper
 import com.hadi.dogsapp.presentation.models.BreedUIModel
 import com.hadi.dogsapp.presentation.utils.ViewState
+import com.hadi.dogsapp.presentation.viewmodels.BaseSchedulerProvider
+import com.hadi.dogsapp.presentation.viewmodels.BaseViewModel
 import io.reactivex.functions.Consumer
 import javax.inject.Inject
 

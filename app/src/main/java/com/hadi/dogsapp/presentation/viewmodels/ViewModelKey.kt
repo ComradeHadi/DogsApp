@@ -1,3 +1,4 @@
+package com.hadi.dogsapp.presentation.viewmodels
 
 import androidx.lifecycle.ViewModel
 import dagger.MapKey

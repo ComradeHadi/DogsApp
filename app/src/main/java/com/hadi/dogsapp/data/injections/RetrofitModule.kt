@@ -1,3 +1,4 @@
+package com.hadi.dogsapp.data.injections
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -17,7 +18,7 @@ class RetrofitModule {
     fun getRetrofit(okHttpClient: OkHttpClient, gson: Gson): Retrofit {
         return Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create(gson))
-            .baseUrl("https://dog.ceo/dog-api/")
+            .baseUrl("https://dog.ceo/api/")
             .client(okHttpClient)
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build()

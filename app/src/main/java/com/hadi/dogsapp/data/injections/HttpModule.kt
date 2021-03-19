@@ -1,3 +1,4 @@
+package com.hadi.dogsapp.data.injections
 
 import dagger.Module
 import dagger.Provides

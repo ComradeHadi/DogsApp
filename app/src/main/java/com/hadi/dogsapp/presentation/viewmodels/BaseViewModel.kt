@@ -1,6 +1,6 @@
+package com.hadi.dogsapp.presentation.viewmodels
 
 
-import BaseSchedulerProvider
 import androidx.lifecycle.ViewModel
 import io.reactivex.Flowable
 import io.reactivex.Scheduler

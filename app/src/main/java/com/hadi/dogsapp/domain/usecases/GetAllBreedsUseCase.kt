@@ -4,5 +4,5 @@ import com.hadi.dogsapp.domain.Repository
 import javax.inject.Inject
 
 class GetAllBreedsUseCase @Inject constructor(private val repository: Repository) {
-    fun getAllBreeds () = repository.getAllBreeds()
+    suspend fun getAllBreeds () = repository.getAllBreeds()
 }

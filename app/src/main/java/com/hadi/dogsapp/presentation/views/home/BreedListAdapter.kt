@@ -37,48 +37,47 @@ class BreedListAdapter  : RecyclerView.Adapter<BreedListAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
 
-        viewHolder.binding.fleet.text = posts[position].fleetType
-        viewHolder.binding.longitude.text = String.format("%.2f", posts[position].coordinate.longitude)
-        viewHolder.binding.latitude.text = String.format("%.2f",  posts[position].coordinate.latitude)
+        viewHolder.binding.textViewName.text = breeds[position].name
 
 
-        viewHolder.binding.carItemLayout.setOnClickListener {
-            onPostClickListener?.setOnPostClickListener(posts[position].id)
 
-//            startActivity(Intent(viewHolder.binding.carItemLayout.context, MainActivity::class.java))
-//            Log.e("Click", posts[position].id.toString())
-           // startActivity(Intent(this@context, MainActivity::class.java))
+//        viewHolder.binding.carItemLayout.setOnClickListener {
+//            onPostClickListener?.setOnPostClickListener(breeds[position].name.toInt())
 //
-//            val activity = viewHolder.binding.carItemLayout.context as Activity
-           var intent =  Intent(context, MapsActivity::class.java)
-            intent.putExtra("lat", posts[position].coordinate.latitude.toString())
-            intent.putExtra("lon", posts[position].coordinate.longitude.toString())
-            intent.putExtra("id", posts[position].id)
-            intent.putExtra("heading", posts[position].heading.toString())
-            context.startActivity(intent)
-//            startActivity(activity, intent, null)
-
-        }
+////            startActivity(Intent(viewHolder.binding.carItemLayout.context, MainActivity::class.java))
+////            Log.e("Click", breeds[position].id.toString())
+//           // startActivity(Intent(this@context, MainActivity::class.java))
+////
+////            val activity = viewHolder.binding.carItemLayout.context as Activity
+////           var intent =  Intent(context, MapsActivity::class.java)
+////            intent.putExtra("lat", breeds[position].coordinate.latitude.toString())
+////            intent.putExtra("lon", breeds[position].coordinate.longitude.toString())
+////            intent.putExtra("id", breeds[position].id)
+////            intent.putExtra("heading", breeds[position].heading.toString())
+//           // context.startActivity(intent)
+////            startActivity(activity, intent, null)
+//
+//        }
 
     }
 
-    override fun getItemCount() = posts.size
+    override fun getItemCount() = breeds.size
 
-    fun provideList(newPosts: List<PoiUIModel>?) {
-        newPosts?.let {
-            posts.addAll(it)
-            val uniquePostList = posts.distinctBy { post ->
-                post.id
+    fun provideList(newbreeds: List<BreedUIModel>?) {
+        newbreeds?.let {
+            breeds.addAll(it)
+            val uniquePostList = breeds.distinctBy { post ->
+                post.name
             }
-            posts.clear()
-            posts.addAll(uniquePostList)
+            breeds.clear()
+            breeds.addAll(uniquePostList)
             notifyDataSetChanged()
         }
     }
 
     @Suppress("unused")
     fun clear() {
-        posts.clear()
+        breeds.clear()
         notifyDataSetChanged()
     }
 
