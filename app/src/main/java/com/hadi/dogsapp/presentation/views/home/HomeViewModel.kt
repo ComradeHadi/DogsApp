@@ -25,16 +25,16 @@ class HomeViewModel @Inject constructor(
     val allBreeds = MutableLiveData<ViewState<List<BreedUIModel>>>()
 
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
-    private fun getAlBreeds() {
-        execute(loadingConsumer = Consumer {
-            allBreeds.postValue(ViewState.loading())
-        }, throwableConsumer = Consumer {
-            allBreeds.postValue(ViewState.error(it.message))
-        }, successConsumer = Consumer {
-            allBreeds.postValue(ViewState.success(it.map{
-                    post->dataDogBreedMapper.mapFromDomnainToPresnetation(post)}))
-        }, useCase = getAllBreedsUseCase.getAllBreeds())
-    }
+  //  @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
+//    private fun getAlBreeds() {
+//        execute(loadingConsumer = Consumer {
+//            allBreeds.postValue(ViewState.loading())
+//        }, throwableConsumer = Consumer {
+//            allBreeds.postValue(ViewState.error(it.message))
+//        }, successConsumer = Consumer {
+//            allBreeds.postValue(ViewState.success(it.map{
+//                    post->dataDogBreedMapper.mapFromDomnainToPresnetation(post)}))
+//        }, useCase = getAllBreedsUseCase.getAllBreeds())
+//    }
 }
 
